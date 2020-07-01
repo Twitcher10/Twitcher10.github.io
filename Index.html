@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Frost Team Coming Soon</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body><header>
+	<a href="#" class="logo">Frost Team</a>
+	
+</header>
+<section>
+	<img src="assets/img/curve.png" class="wave">
+	<div class="contentBx">
+		<h2>Coming Soon</h2>
+		<p>Frost Team Website is currently under development. As the programers are keeping calm and coding on. It will be available as inscribed in the countdown</p>
+		<div class="countdown">
+			<div class="time"><div id="day"></div><span>Days</span></div>
+			<div class="time"><div id="hour"></div><span>Hours</span></div>
+			<div class="time"><div id="minute"></div><span>Minutes</span></div>
+			<div class="time"><div id="second"></div><span>Seconds</span></div>
+		</div>
+		<a href="#" onclick="toggle();">Email Me!</a>
+		<a href="https://wa.link/1pa1pl">Whatsapp Me!</a>
+	</div>
+	<div class="imgBx">
+		<img src="assets/img/man.png">
+	</div>
+	<ul class="sci">
+	  <li><a href="#"><img src="assets/img/facebook.png"></a></li>
+	  <li><a href="#"><img src="assets/img/twitter.png"></a></li>
+	  <li><a href="#"><img src="assets/img/instagram.png"></a></li>
+	</ul>
+</section> 
+<div class="newsletter">
+	<h2>Stay Tuned</h2>
+	<p>Get Notified At Launch</p>
+	<div class="inputBox">
+		<form action="contact.php" method="post">
+			<input type="email" name="email" required="" placeholder="Email Address">
+			<input type="submit" value="submit">
+		</form>
+	</div>
+	<img src="assets/img/close.png" class="close" onclick="toggle();">
+</div>
+<script type="text/javascript">
+
+	function toggle(){
+		var newsletter = document.querySelector('.newsletter');
+		newsletter.classList.toggle('active')
+	}
+
+
+	var countDate = new Date('Jul 30, 2020 00:00:00').getTime();
+
+	function newYear(){ 
+	  var now = new Date().getTime();
+		gap = countDate - now;
+
+		var second = 1000;
+		var minute = second * 60;
+		var hour = minute * 60; 
+		var day = hour * 24;
+
+		var d = Math.floor(gap / (day));
+		var h = Math.floor((gap % (day)) / (hour));
+		var m = Math.floor((gap % (hour)) / (minute));
+		var s = Math.floor((gap % (minute)) / second);
+
+		document.getElementById('day').innerText = d;
+		document.getElementById('hour').innerText = h;
+		document.getElementById('minute').innerText = m;
+		document.getElementById('second').innerText = s;
+
+	}
+
+	setInterval(function(){
+		newYear();
+	},1000)
+</script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
